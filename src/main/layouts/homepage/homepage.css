@@ -1,0 +1,19 @@
+.banner-container {
+  position: relative;
+}
+.banner-text-block {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgb(0, 0, 0, 0.5);
+  color: white;
+}
+.content-wrapper {
+  padding: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .banner-text-block {
+    max-width: 290px;
+  }
+}

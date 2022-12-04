@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+.heading {
+  font-size: 2rem;
+}
+.video-card-wrapper {
+  max-width: 345px;
+}
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-size: 1rem;
+  }
+  .video-card-wrapper {
+    max-width: 100%;
+  }
+}
