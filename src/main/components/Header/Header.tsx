@@ -15,10 +15,10 @@ import {
 import PetsIcon from "@mui/icons-material/Pets";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styles } from "./header.styles";
+import { useNavigate } from "react-router-dom";
 
 const pages = ["Trending", "Explore"];
 const settings = ["Watch Later", "History", "My Playlists", "Logout"];
-
 export const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -38,6 +38,8 @@ export const Header = () => {
     setAnchorElUser(null);
   };
   const style = { my: 2, color: "white", display: "block" };
+  const navigate = useNavigate();
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -84,7 +86,12 @@ export const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography
+                    textAlign="center"
+                    onClick={() => navigate(`/${page.toLowerCase()}`)}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -94,14 +101,18 @@ export const Header = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={styles.mobileLogoText}
           >
-            PawTv
+            PawTV
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={style}>
+              <Button
+                key={page}
+                onClick={() => navigate(`/${page.toLowerCase()}`)}
+                sx={style}
+              >
                 {page}
               </Button>
             ))}

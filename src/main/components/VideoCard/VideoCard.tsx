@@ -27,7 +27,7 @@ export const VideoCard = (props: props) => {
         <p>{`${views} | ${timeUpload}`}</p>
       </CardContent>
       <CardActions>
-        <Button size="large" variant="contained">
+        <Button size="large" variant="contained" fullWidth>
           Watch Now
         </Button>
       </CardActions>
