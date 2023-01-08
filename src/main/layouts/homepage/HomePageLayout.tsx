@@ -8,6 +8,7 @@ import "./homepage.css";
 import { VideoCard } from "../../components/VideoCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useNavigate } from "react-router-dom";
 
 export const HomePageLayout = () => {
   const arr = new Array(4).fill(1);
@@ -28,6 +29,7 @@ export const HomePageLayout = () => {
       slidesToSlide: 1,
     },
   };
+  const navigate = useNavigate();
   return (
     <div style={{ marginBottom: 20 }}>
       <div className="banner-container">
@@ -57,6 +59,7 @@ export const HomePageLayout = () => {
               views="6K Views"
               timeUpload="4 hours ago"
               key={index}
+              onClick={() => navigate("/videos")}
             />
           ))}
         </Carousel>

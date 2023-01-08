@@ -21,6 +21,7 @@ export const TrendingPageLayout = () => {
               views="6K Views"
               timeUpload="4 hours ago"
               key={index}
+              onClick={() => {}}
             />
           </Grid>
         ))}

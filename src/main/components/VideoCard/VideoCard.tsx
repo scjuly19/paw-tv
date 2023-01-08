@@ -11,9 +11,10 @@ type props = {
   title: string;
   views: string;
   timeUpload: string;
+  onClick: () => void;
 };
 export const VideoCard = (props: props) => {
-  const { title, views, timeUpload } = props;
+  const { title, views, timeUpload, onClick } = props;
   return (
     <Card className="video-card-wrapper">
       <CardMedia
@@ -27,7 +28,7 @@ export const VideoCard = (props: props) => {
         <p>{`${views} | ${timeUpload}`}</p>
       </CardContent>
       <CardActions>
-        <Button size="large" variant="contained" fullWidth>
+        <Button size="large" variant="contained" fullWidth onClick={onClick}>
           Watch Now
         </Button>
       </CardActions>
